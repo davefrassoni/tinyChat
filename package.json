@@ -1,6 +1,6 @@
 {
 	"name": "tinyChat",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Tiny Chat app working with Node.js and Socket.io",
 	"author": "Dave Frassoni <me@davefrassoni.com> (http://davefrassoni.com/)",
 	"dependencies": {

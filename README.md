@@ -1,6 +1,8 @@
 # tinyChat #
 
-Tiny Chat app working with Node.js and Socket.io
+## Description ##
+
+### Tiny Chat app working with Node.js and Socket.io ###
 
 ## Installation ##
 
@@ -10,10 +12,10 @@ Tiny Chat app working with Node.js and Socket.io
 
 1. Run:
 
-	node server.js
+		node server.js
 
 1. Browse to:
 
-	http://localhost:8080/
+		http://localhost:8080/
 
 1. Enjoy!
