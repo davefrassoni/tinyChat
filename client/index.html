@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>tinyChat</title>
+		<link rel="stylesheet" type="text/css" href="styles/site.css" />
+		<script src="scripts/socket.io.js"></script>
+		<script src="scripts/jquery-1.7.2.js"></script>
+		<script src="scripts/client.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="status">status: offline</div>
+			<div id="chat">
+				<div id="chatContent"></div>
+				<input type="text" id="chatNick" disabled="disabled" value="guest" />
+				<input type="text" id="chatInput" disabled="disabled" />
+			</div>
+			<div id="people"></div>
+		</div>
+	</body>
+</html>

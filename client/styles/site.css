@@ -1,0 +1,91 @@
+* 
+{
+	font-family:tahoma;
+	font-size:12px;
+	padding:0px;
+	margin:0px;
+}
+
+p
+{
+	line-height:18px;
+}
+
+#main
+{
+	width:600px;
+	height:550px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+
+#status
+{
+	padding:10px;
+	margin-left:30px;
+	width:420px;
+}
+
+#chat
+{
+	margin-left:30px;
+	float:left;
+}
+
+#people
+{
+	padding:5px;
+	background:#ddd;
+	border-radius:5px;
+	border:1px solid #ccc;
+	width:100px;
+	margin-left:30px;
+	float:left;
+}
+
+#chatContent
+{
+	background:#ddd;
+	border-radius:5px;
+	border:1px solid #ccc;
+	width:400px;
+	height:400px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+#chatNick
+{
+	border-radius:2px;
+	border:1px solid #ccc;
+	margin-top:10px;
+	padding:5px;
+	width:80px;
+	float:left;
+}
+
+#chatInput
+{
+	border-radius:2px;
+	border:1px solid #ccc;
+	margin-top:10px;
+	margin-left:10px;
+	padding:5px;
+	width:288px;
+	float:left;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
