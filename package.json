@@ -2,10 +2,15 @@
 	"name": "tinyChat",
 	"version": "0.0.3",
 	"description": "Tiny Chat app working with Node.js and Socket.io",
+	"keywords": ["tinyChat", "tiny", "chat", "node", "nodejs", "node.js"],
 	"author": "Dave Frassoni <me@davefrassoni.com> (http://davefrassoni.com/)",
 	"dependencies": {
 		"socket.io": "",
 		"sanitizer": ""
 	},
-	"engine": "node >= 0.4.7"
+	"engine": "node >= 0.4.7",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davefrassoni/tinyChat.git"
+	}
 }
