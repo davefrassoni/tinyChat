@@ -28,8 +28,6 @@ io.sockets.on('connection', function (socket) {
 	io.sockets.emit('userJoined', { nick: myNick, color: myColor });
 	io.sockets.emit('users', users);
 	
-	console.log('> ' + socket.id + ' (' + myNick + ') connected.');
-	
 	socket.on('message', function (msg) {
 		var sanitizedMsg = sanitizer.sanitize(msg.text);
 		if(sanitizedMsg != msg.text) {
@@ -74,7 +72,6 @@ io.sockets.on('connection', function (socket) {
 		}
 		
 		io.sockets.emit('users', users);
-		console.log('> ' + socket.id + ' (' + myNick + ') disconnected.');
 	});
 	
 	function rndColor() {

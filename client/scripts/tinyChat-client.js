@@ -1,18 +1,18 @@
 $(document).ready(function() {
-	var socket = io.connect('http://localhost:8080');
+	var socket = io.connect('http://localhost:8080/');
 	
-	var status = $("#status");
+	var chatOpener = $("#chatOpener");
+	var chatToggler = $("#chatToggler");
+	var chatCloser = $("#chatCloser");
 	var chatContent = $("#chatContent");
 	var chatInput = $('#chatInput');
 	var chatNick = $('#chatNick');
-	var people = $('#people');
+	var chatPeople = $('#chatPeople');
 	
 	socket.on('connect', function ()
 	{
-		status.text('status: online');
 		chatInput.removeAttr('disabled');
 		chatNick.removeAttr('disabled');
-		document.getElementById("chatInput").focus();
 	});
 	
 	chatInput.keydown(function(e)
@@ -62,16 +62,16 @@ $(document).ready(function() {
 	socket.on('userLeft', function (user)
 	{
 		chatContent.append('<p>&raquo; <span style="color:' + user.color + '">' + user.nick + '</span> left.</p>');
-		
+
 		chatScrollDown();
 	});
 	
 	socket.on('users', function (users)
 	{
-		people.text('');
+		chatPeople.text('');
 		for(var i in users)
 		{
-			people.append('<p><span style="color:' + users[i].color + '">' + users[i].nick + '</span></p>');
+			chatPeople.append('<span style="color:' + users[i].color + '">' + users[i].nick + '</span> - ');
 		}
 	});
 	
@@ -81,7 +81,15 @@ $(document).ready(function() {
 		
 		chatScrollDown();
 	});
-
+	
+	chatOpener.click(function () {
+		$('#chatToggler').toggle("slide", { direction: "down" }, 1000);
+	});
+	
+	chatCloser.click(function () {
+		$('#chatToggler').toggle("slide", { direction: "down" }, 1000);
+	});
+	
 	function chatScrollDown()
 	{
 		var objChatContent = document.getElementById("chatContent");
