@@ -1,5 +1,4 @@
 # tinyChat #
-
 current version: 0.0.3
 
 ## Description ##
@@ -8,7 +7,9 @@ current version: 0.0.3
 
 ## Installation ##
 
-### npm install tinyChat ###
+### Either download from GitHub or run: ###
+
+		npm install tinyChat
 
 ## Setup ##
 
