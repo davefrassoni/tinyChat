@@ -9,15 +9,15 @@
 		<script src="scripts/jquery-ui-1.8.20.custom.min.js"></script>
 		<script src="scripts/tinyChat-client.js"></script>
 	</head>
-	<body>
+	<body style="background:#eee">
 		<div id="chat">
 			<div id="chatOpener">&uarr; click here to show the chat &uarr;</div>
 			<div id="chatToggler">
 				<div id="chatCloser">&darr; click here to hide the chat &darr;</div>
 				<div id="chatPeople"></div>
 				<div id="chatContent"></div>
-				<input type="text" id="chatNick" disabled="disabled" value="guest" />
-				<input type="text" id="chatInput" disabled="disabled" />
+				<input type="text" id="chatNick" disabled="disabled" value="guest" maxlength="32" />
+				<input type="text" id="chatInput" disabled="disabled" maxlength="256" />
 			</div>
 		</div>
 	</body>

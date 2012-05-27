@@ -8,6 +8,7 @@ $(document).ready(function() {
 	var chatInput = $('#chatInput');
 	var chatNick = $('#chatNick');
 	var chatPeople = $('#chatPeople');
+	var myNick = "guest";
 	
 	socket.on('connect', function ()
 	{
@@ -18,32 +19,46 @@ $(document).ready(function() {
 	chatInput.keydown(function(e)
 	{
 		if (e.keyCode === 13) {
-			var msg = chatInput.val();
-			if (!msg) {
-				return;
-			}
-			if(msg == 'cls' | msg == 'clear') {
-				chatContent.text('');
-				chatInput.val('');
-				return;
-			}
-			
-			socket.emit('message', { text: chatInput.val() });
-			chatInput.val('');
+			sendMessage();
 		}
 	});
+	
+	function sendMessage()
+	{
+		var msg = chatInput.val();
+		if (!msg) {
+			return;
+		}
+		if(msg == 'cls' | msg == 'clear') {
+			chatContent.text('');
+			chatInput.val('');
+			return;
+		}
+		if(myNick != chatNick.val()) {
+			nickChange();
+		}
+		
+		socket.emit('message', { text: msg });
+		chatInput.val('');
+	}
 	
 	chatNick.keydown(function(e)
 	{
 		if (e.keyCode === 13) {
-			var msg = chatNick.val();
-			if (!msg) {
-				return;
-			}
-			
-			socket.emit('nickChange', { nick: chatNick.val() });
+			nickChange();
 		}
 	});
+	
+	function nickChange()
+	{
+		var msg = chatNick.val();
+		if (!msg || msg == myNick) {
+			return;
+		}
+		
+		socket.emit('nickChange', { nick: msg });
+		myNick = msg;
+	}
 	
 	socket.on('message', function(msg)
 	{
@@ -68,10 +83,10 @@ $(document).ready(function() {
 	
 	socket.on('users', function (users)
 	{
-		chatPeople.text('');
+		chatPeople.text(users.length + ' online users');
 		for(var i in users)
 		{
-			chatPeople.append('<span style="color:' + users[i].color + '">' + users[i].nick + '</span> - ');
+			chatPeople.append(' - <span style="color:' + users[i].color + '">' + users[i].nick + '</span>');
 		}
 	});
 	
