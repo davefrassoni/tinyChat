@@ -24,3 +24,6 @@ current version: 0.0.3
 1. Modify code as you want
 
 1. Enjoy the tinyChat!
+
+[![NPM](https://nodei.co/npm/tinyChat.png?downloads=true&stars=true)](https://nodei.co/npm/tinyChat/)
+[![NPM](https://nodei.co/npm-dl/tinyChat.png)](https://nodei.co/npm/tinyChat/)
